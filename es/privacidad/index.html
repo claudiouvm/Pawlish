@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacidad · Pawlish</title>
+<meta name="description" content="Qué recogen Pawlish y pawlish.app (muy poco) y a dónde va tu texto (solo al servicio de IA que elijas).">
+
+<link rel="canonical" href="https://pawlish.app/es/privacidad/">
+<link rel="alternate" hreflang="en" href="https://pawlish.app/privacy/">
+<link rel="alternate" hreflang="es" href="https://pawlish.app/es/privacidad/">
+<link rel="alternate" hreflang="x-default" href="https://pawlish.app/privacy/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFF8F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12132A" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pawlish">
+<meta property="og:title" content="Privacidad · Pawlish">
+<meta property="og:description" content="Qué recogen Pawlish y pawlish.app (muy poco) y a dónde va tu texto (solo al servicio de IA que elijas).">
+<meta property="og:url" content="https://pawlish.app/es/privacidad/">
+<meta property="og:image" content="https://pawlish.app/assets/og-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pawlish: una tecla durazno con una huella y las palabras «Pule cualquier texto, en cualquier lugar de tu Mac».">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preload" href="../../assets/fonts/fredoka-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<script src="../../assets/theme.js"></script>
+</head>
+<body class="page-privacy">
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="../"><img src="../../assets/app-icon-small.svg" alt="" width="36" height="36"><span>Pawlish</span></a>
+    <div class="tools">
+      <a class="pill" href="../../privacy/" hreflang="en" lang="en" title="Read in English" aria-label="Read in English" data-track="language_switch" data-to="en">English</a>
+      <button class="icon-btn" type="button" id="theme-toggle" aria-label="Cambiar entre claro y oscuro" aria-pressed="false"><svg class="ic ic-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="ic ic-sun" aria-hidden="true"><use href="#i-sun"/></svg></button>
+      <a class="icon-btn" href="https://github.com/claudiouvm/Pawlish" aria-label="GitHub" data-track="github_click" data-where="header"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="section">
+  <div class="wrap prose">
+    <p class="crumb"><a href="../"><svg class="ic back" aria-hidden="true"><use href="#i-arrow"/></svg>Pawlish</a></p>
+    <h1>Privacidad</h1>
+    <p class="lead">Pawlish está hecha para que tu texto quede entre tú y tu servicio de IA. Esta página trata dos cosas: la app y este sitio web.</p>
+    <p class="updated">Última actualización: octubre de 2026.</p>
+
+    <h2 id="app">La app Pawlish</h2>
+    <p>El texto que seleccionas va directo al servicio de IA que elijas, o a tu modelo local. No pasa por ningún servidor nuestro ni lo supervisan sus desarrolladores.</p>
+    <p>Lo que cada servicio hace con tu texto depende de sus propias condiciones; revísalas antes de usar información sensible. Tus API keys se guardan solo en el Llavero de tu Mac.</p>
+    <p>La única telemetría de Pawlish son los informes de errores. Cuando algo falla, la app envía a PostHog el tipo de error, el tipo de servicio de IA (OpenAI, Anthropic, local u otro), las versiones de Pawlish y de macOS y las últimas líneas de su registro de diagnóstico, que solo contienen avisos fijos como lo que hacía la app y códigos de error. Nunca incluyen tu texto, tus prompts, tus API keys, las direcciones de tus servicios ni los nombres de tus apps, y no se asocian a ninguna persona. No hay estadísticas de uso ni seguimiento.</p>
+    <p>Las otras conexiones son la búsqueda de actualizaciones en GitHub, la verificación de la licencia en Polar, la tienda que vende Pawlish, y el servicio de IA que elijas. La verificación de la licencia envía tu clave de licencia y una etiqueta aleatoria de este Mac cuando la activas y de vez en cuando después, nunca nada sobre tu texto ni sobre cómo usas la app; durante la prueba gratuita no hay ninguna.</p>
+    <p>El registro de diagnóstico vive en tu Mac (Biblioteca/Logs) y nunca incluye tu texto, tus API keys ni tu clave de licencia. Las líneas que nombran tus apps o direcciones, o que llevan los mensajes que los servicios y macOS añaden a los errores, se quedan en ese archivo marcadas con «(local)» y nunca se envían. Cada informe de error que se envía queda anotado ahí.</p>
+
+    <h2 id="reports">Qué contiene un informe de errores</h2>
+    <p>Los informes van a PostHog (región EE. UU.) solo cuando algo falla por un defecto o una incompatibilidad de la app, no por una API key incorrecta ni por falta de internet. Cada uno contiene:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Qué</th><th scope="col">Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Tipo de error y código</th><td>AIError.http · HTTP 400</td></tr>
+          <tr><th scope="row">Qué hacía la app</th><td>action, connection-test</td></tr>
+          <tr><th scope="row">Tipo de servicio de IA</th><td>openai, anthropic, local u other (nunca su dirección)</td></tr>
+          <tr><th scope="row">Versiones</th><td>De Pawlish y de macOS</td></tr>
+          <tr><th scope="row">Un identificador aleatorio</th><td>Nuevo en cada arranque y sin relación contigo. Pawlish pide a PostHog que no guarde tu dirección IP.</td></tr>
+          <tr><th scope="row">Las últimas líneas del registro de diagnóstico</th><td>Avisos fijos y códigos, como «OK improve · 120 input characters · 1.2 s» o «Error in improve: AIError.http 400». Cualquier dirección, correo o ruta de archivo se quita antes de enviar.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Nunca se incluyen: el texto que procesas, tus prompts, tus API keys, direcciones, rutas de archivos, los nombres de tus apps ni los mensajes que un proveedor o macOS añaden a un error.</p>
+    <p>Cada informe también se anota en el registro de diagnóstico de tu Mac. Las líneas que viajan con él son algunas de las de ese archivo que no están marcadas con «(local)», así que puedes comprobar qué se envió.</p>
+
+    <h2 id="site">Este sitio web</h2>
+    <p>pawlish.app mide las visitas y los clics con PostHog (nube de EE. UU.) para saber qué lee la gente y qué le confunde. Funciona sin cookies:</p>
+    <ul>
+      <li>Ni cookies ni almacenamiento local o de sesión para las estadísticas. No se guarda nada en tu navegador para reconocerte.</li>
+      <li>Sin perfiles de visitantes ni seguimiento entre sitios. A los visitantes se les distingue durante un solo día con un hash anónimo que calculan los servidores de PostHog y que cambia cada día.</li>
+      <li>Lo que se registra: las páginas que abres, cuánto tiempo te quedas y hasta dónde bajas, dónde haces clic y mueves el puntero (como un mapa de calor), de dónde vienes, y tu navegador, sistema, tamaño de pantalla e idioma. Nunca texto que escribas: este sitio no tiene formularios.</li>
+      <li>El sitio respeta «No rastrear» y Global Privacy Control. Si tu navegador envía cualquiera de las dos señales, no se registra nada.</li>
+    </ul>
+    <p>Lo único que el sitio guarda en tu navegador son decisiones que tomas tú, como el tema claro u oscuro, el idioma o desactivar las estadísticas. Se quedan en tu dispositivo y no se envían a ningún lado.</p>
+    <div class="optout">
+      <button class="key key-soft" type="button" id="analytics-toggle" aria-pressed="false" hidden>No contar mis visitas en este navegador</button>
+      <p id="analytics-state" role="status" aria-live="polite"></p>
+    </div>
+    <p>La app en sí nunca contacta con PostHog para estadísticas: su única telemetría son los informes de errores descritos arriba.</p>
+
+    <h2 id="contact">Preguntas</h2>
+    <p>Abre un issue en <a href="https://github.com/claudiouvm/Pawlish/issues">GitHub</a> y te respondemos allí.</p>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="../"><img src="../../assets/app-icon-small.svg" alt="" width="36" height="36"><span>Pawlish</span></a>
+        <p>Una app diminuta de barra de menú para pulir textos.</p>
+      </div>
+      <nav class="foot-links" aria-label="Enlaces">
+        <a href="https://github.com/claudiouvm/Pawlish" data-track="github_click" data-where="footer">GitHub</a>
+        <a href="https://github.com/claudiouvm/Pawlish/releases" data-track="releases_click">Versiones</a>
+        <a href="https://github.com/claudiouvm/Pawlish/issues">Informar de un problema</a>
+        <a href="./">Privacidad</a>
+        <a href="../../privacy/" hreflang="en" lang="en" data-track="language_switch" data-to="en">English</a>
+      </nav>
+    </div>
+    <p class="fine">Pawlish es un proyecto independiente. OpenAI, Anthropic, Apple, macOS y otros nombres son marcas de sus dueños; Pawlish no está afiliado ni respaldado por ellos.</p>
+    <p class="fine">© 2026 Pawlish</p>
+  </div>
+</footer>
+
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .6a11.4 11.4 0 0 0-3.6 22.2c.6.1.8-.25.8-.55v-2c-3.2.7-3.85-1.4-3.85-1.4-.5-1.3-1.28-1.67-1.28-1.67-1.05-.72.08-.7.08-.7 1.15.08 1.76 1.2 1.76 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.3-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.55A11.4 11.4 0 0 0 12 .6Z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11.5M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15.5" r="4.5"/><path d="m11.2 12.3 8.3-8.3M15.5 8l3 3M13 10.5l2 2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 7.7 7.5 9.5 4.4-1.8 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.4 2.4 4.2-4.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 5 13.5h6.5l-1 8 8.5-11h-6.5l1-8Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5.5 15V6.5a2 2 0 0 1 2-2H16"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3ZM18.5 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4.5" y="5" width="15" height="10.5" rx="2"/><path d="M2.5 19.5h19"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7.5 18.5a4.25 4.25 0 0 1-.7-8.45A6 6 0 0 1 18.3 9.7a4.4 4.4 0 0 1-.8 8.8h-10Z"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7.5" stroke-dasharray="3.2 2.35"/></symbol>
+  <symbol id="i-prompts" viewBox="0 0 24 24"><path d="M4.5 6.5h15M4.5 12h15M4.5 17.5h9"/></symbol>
+  <symbol id="i-popup" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="12" height="10" rx="2"/><rect x="8.5" y="10.5" width="12" height="10" rx="2" fill="var(--win, none)"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.1"/></symbol>
+  <symbol id="i-paw" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><ellipse cx="5.6" cy="11.2" rx="2" ry="2.7"/><ellipse cx="9.6" cy="6.4" rx="2" ry="2.7"/><ellipse cx="14.4" cy="6.4" rx="2" ry="2.7"/><ellipse cx="18.4" cy="11.2" rx="2" ry="2.7"/><path d="M12 11.3c-3.1 0-6.2 3.7-6.2 6.5 0 2.3 2 2.8 3.2 2.8 1.1 0 1.9-.6 3-.6s1.9.6 3 .6c1.2 0 3.2-.5 3.2-2.8 0-2.8-3.1-6.5-6.2-6.5Z"/></g></symbol>
+  <symbol id="i-cursor" viewBox="0 0 16 22"><path d="M1.5 1.2v16.3l4.2-3.9 2.9 6.4 2.5-1.1-2.9-6.3h5.9L1.5 1.2Z" fill="#fff" stroke="#16161a" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+  <symbol id="i-replace" viewBox="0 0 24 24"><path d="M4.5 8.5h11M12 5l3.5 3.5L12 12M19.5 15.5h-11M12 19l-3.5-3.5L12 12"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6.5 3.5h7l4.5 4.5v11a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 5 19V5a1.5 1.5 0 0 1 1.5-1.5Z"/><path d="M13.5 3.5V8H18M8.5 13h7M8.5 16.5h5"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3.5 12S7 6 12 6s8.5 6 8.5 6-3.5 6-8.5 6S3.5 12 3.5 12Z"/><circle cx="12" cy="12" r="2.6"/><path d="M4.5 4.5l15 15"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2.5"/><path d="M4 10h16M4 14.5h16M10 10v9M15 10v9"/></symbol>
+  <symbol id="i-diff" viewBox="0 0 24 24"><path d="M5 8h8M5 12h5M5 16h8"/><path d="m15 12 2 2 3.5-4"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19 12a7 7 0 1 1-2.1-5M19 4.5V8h-3.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 19.5S4.5 15 4.5 9.6A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7.5 1.6c0 5.4-7.5 9.9-7.5 9.9Z"/></symbol>
+  <symbol id="i-wand" viewBox="0 0 24 24"><path d="m5 19 9.5-9.5M13 6.5l4.5 4.5M17 3.5v2.4M15.8 4.7h2.4M20 8.5v2M19 9.5h2"/></symbol>
+  <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M5 9.5h3l4-3.5v12l-4-3.5H5v-5ZM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="m5 19 .8-3.6L16.5 4.7a1.7 1.7 0 0 1 2.4 0l.4.4a1.7 1.7 0 0 1 0 2.4L8.6 18.2 5 19ZM14.5 6.7l2.8 2.8"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.4 5.2 3.4 8.5S14.400 18.100 12 20.500C9.600 18.100 8.600 15.300 8.600 12S9.600 5.900 12 3.500Z"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5M10.5 8v5M8 10.5h5"/></symbol>
+  <symbol id="i-act-improve" viewBox="0 0 24 24"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3ZM18.5 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></symbol>
+  <symbol id="i-act-shorten" viewBox="0 0 24 24"><path d="M4.5 7h15M7.5 12h9M10.5 17h3"/></symbol>
+  <symbol id="i-act-summarize" viewBox="0 0 24 24"><path d="M9.5 6.5h10M9.5 12h10M9.5 17.5h10"/><circle cx="4.8" cy="6.5" r=".9" fill="currentColor"/><circle cx="4.8" cy="12" r=".9" fill="currentColor"/><circle cx="4.8" cy="17.5" r=".9" fill="currentColor"/></symbol>
+  <symbol id="i-act-proofread" viewBox="0 0 24 24"><path d="M4 8h9M4 13h5M4 18h4"/><path d="m11.5 16 3 3 6-7"/></symbol>
+  <symbol id="i-act-translate" viewBox="0 0 24 24"><path d="M4 6h9M8.5 4v2M6 6c.4 3.3 2.6 5.8 5.6 7.4M12 6c-.6 3.6-3.2 6.4-7.4 7.8M12.5 20l3.5-8 3.5 8M13.8 17.2h4.4"/></symbol>
+</svg>
+
+<script type="application/json" id="site-data">{"label_ready": "Descargar para Mac", "label_soon": "Próximamente", "ready": "Versión {version} · {size} · para Macs con Apple Silicon (M1 o posterior) con macOS 13 o más reciente.", "soon": "La primera versión está en camino. Sigue el repositorio en GitHub para enterarte cuando salga.", "size_unit": "MB", "copied": "Copiado", "copy_failed": "Selecciona el texto y cópialo a mano", "analytics_on": "Las estadísticas están activadas en este navegador.", "analytics_off": "Las estadísticas están desactivadas en este navegador."}</script>
+<script src="../../assets/site.js" defer></script>
+<script src="../../assets/analytics.js" defer></script>
+</body>
+</html>
